@@ -1278,6 +1278,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerRestart: {fileID: 1186161500}
   collectableRenderer: {fileID: 1687164873}
+  Heart_on_Screen: {fileID: 2736900222523585693, guid: d2739136b5da1c244bfe9659a83ad5e9,
+    type: 3}
+  Heart_on: {fileID: 21300000, guid: 109db1ac6fcd34b4cb5b370d0802f677, type: 3}
+  Heart_off: {fileID: 21300002, guid: 109db1ac6fcd34b4cb5b370d0802f677, type: 3}
 --- !u!1 &1524912001
 GameObject:
   m_ObjectHideFlags: 0
