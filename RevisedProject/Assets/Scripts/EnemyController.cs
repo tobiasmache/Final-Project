@@ -5,15 +5,18 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     public Transform Enemy;
-    void Start()
+    private Vector3 enemyPosition;
+
+    void Awake()
     {
+        enemyPosition = Enemy.transform.position;
 
     }
-
+   
     // Update is called once per frame
     void Update()
     {
-        Enemy.localPosition = new Vector3(Mathf.Lerp(5.5f, 7.5f, Mathf.PingPong(Time.time * .5f, 1)), 0.6f, 0f);
+        Enemy.localPosition = new Vector3(Mathf.Lerp(enemyPosition.x-1, enemyPosition.x+1f, Mathf.PingPong(Time.time * .5f, 1)), enemyPosition.y, 0f);
 
     }
 }
