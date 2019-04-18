@@ -6,6 +6,13 @@ public class PlayerScript : MonoBehaviour
 {
     public Transform PlayerRestart;
 
+    public CharacterController2D controller;
+
+    public float runSpeed = 40f;
+
+    float horizontalMove = 0f;
+    bool jump = false;
+
     //Rij Heart
     private int health;
     public GameObject Heart_on_Screen;
@@ -45,7 +52,22 @@ public class PlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
+
+        if (Input.GetButtonDown("Jump"))
+        {
+            jump = true;
+        }
+
+    }
+
+    private void FixedUpdate()
+    {
+        //move character
+
+        controller.Move(horizontalMove * Time.fixedDeltaTime, jump);
+        jump = false;
+
     }
 
     void OnTriggerEnter2D(Collider2D other)

@@ -599,7 +599,8 @@ GameObject:
   - component: {fileID: 1186161498}
   - component: {fileID: 1186161497}
   - component: {fileID: 1186161501}
-  m_Layer: 0
+  - component: {fileID: 1186161502}
+  m_Layer: 8
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -621,12 +622,12 @@ Rigidbody2D:
   m_Mass: 1.0544007
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 5
   m_Material: {fileID: 0}
   m_Interpolate: 1
-  m_SleepingMode: 0
+  m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!70 &1186161498
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -636,7 +637,7 @@ CapsuleCollider2D:
   m_GameObject: {fileID: 1186161496}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 407b138e31e70ea48b2807f2bc2f37cb, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -718,10 +719,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerRestart: {fileID: 1186161500}
+  controller: {fileID: 1186161502}
+  runSpeed: 40
   Heart_on_Screen: {fileID: 2736900222523585693, guid: d2739136b5da1c244bfe9659a83ad5e9,
     type: 3}
   Heart_on: {fileID: 21300000, guid: 109db1ac6fcd34b4cb5b370d0802f677, type: 3}
   Heart_off: {fileID: 21300002, guid: 109db1ac6fcd34b4cb5b370d0802f677, type: 3}
+--- !u!114 &1186161502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1186161496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cbbf6b2c3b39b44c8759da114351dbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_JumpForce: 1000
+  m_MovementSmoothing: 0.05
+  m_AirControl: 0
+  m_WhatIsGround:
+    serializedVersion: 2
+    m_Bits: 55
+  m_GroundCheck: {fileID: 1979188931}
+  OnLandEvent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1001 &1463627042
 PrefabInstance:
   m_ObjectHideFlags: 0
